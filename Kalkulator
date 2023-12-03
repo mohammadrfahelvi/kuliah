@@ -1,0 +1,45 @@
+//Library C
+#include <stdio.h>
+#include <math.h>
+
+int main() {
+
+    float nilai1, nilai2, nilai3, hasil; // Deklarasi Variable
+    char op1, op2;
+
+    printf("Masukan apa yang ingin kamu hitung: ");
+    scanf("%f %c %f %c %f", &nilai1, &op1, &nilai2, &op2, &nilai3);
+    
+    //Prioritas Perhitungan
+    if(op2 == '*' || op2 == '/'){
+        if(op2 == '*'){
+            nilai2 = nilai2 * nilai3;
+        }
+        else{
+            nilai2 = nilai2 / nilai3;
+        }
+        if(op1 == '+'){
+            hasil= nilai1 + nilai2;
+        }
+        else{
+            hasil = nilai1 - nilai2;
+        }
+    }
+    else{
+        if(op1 == '*'){
+            nilai1 = nilai1 * nilai2;
+        }
+        else{
+            nilai1 = nilai1 / nilai2;
+        }
+        if(op2 == '+'){
+            hasil = nilai1 + nilai3;
+        }
+        else{
+            hasil = nilai1 - nilai3;
+        }
+    }
+
+    printf("Hasil perhitungannya: %.2f ", hasil);
+    return 0;
+}
